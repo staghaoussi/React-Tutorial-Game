@@ -7,11 +7,13 @@ To run Tic Tac Toe Game:
 
 1. Clone repository
 ```
-git clone 
+git clone https://github.com/staghaoussi/React-Tutorial-Game.git
 ```
 
 2. Go in project directory 
-```cd react-tutorial-game```
+```
+cd react-tutorial-game
+```
 
 3. install node modules
 ```
