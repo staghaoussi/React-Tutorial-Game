@@ -24,7 +24,12 @@ export const Square = (props) => {
   }
 
   return (
-    <button className="square" onClick={(e) => { handleClick(e) }}>
+    <button className="square" onClick={(e) => {
+        if(props.squares[props.index]){
+          return
+        }
+        handleClick(e)
+      }}>
         {props.squares[props.index]}
     </button>
   );
