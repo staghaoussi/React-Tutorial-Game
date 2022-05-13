@@ -3,8 +3,10 @@ import { Board } from './Board';
 
 export const Game = () => {
   const [hist, setHist] = useState({0:Array(9).fill(null)})
-  const latest_board_ind = Object.keys(hist).length
 
+
+
+  // function that resets the board to the indicated move
   const gotoMove = key => {
       let newHist = {};
       [...Array(parseInt(key)+1).keys()].map(index => {
@@ -34,14 +36,16 @@ export const Game = () => {
       }
     }
     return null;
-}
+  }
 
+  // winner variable used to determine if winner exists
+  const latest_board_ind = Object.keys(hist).length
   let winner = calculateWinner(hist[latest_board_ind-1])
 
   return (
     <div className="game">
-        <div className="game-board">
-          <Board winner={winner} squares={hist[latest_board_ind-1]} hist={hist} setHist={setHist}/>
+        <div cl assName="game-board">
+          <Board winner={winner} latest_board_ind={latest_board_ind} squares={hist[latest_board_ind-1]} hist={hist} setHist={setHist}/>
         </div>
         <div className="game-info">
 
